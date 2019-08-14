@@ -16,3 +16,10 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+
+//Custon artisan command line tasks
+
+Artisan::command('foobar', function () {
+    $this->comment('Trigger foobar artisan task');
+})->describe('Do you need help?');

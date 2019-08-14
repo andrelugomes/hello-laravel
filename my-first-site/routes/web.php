@@ -43,3 +43,5 @@ Route::get('/about', function () {
 */
 
 Route::get('/tasks', 'TaskController@index');
+
+Route::get('/projects', 'ProjectController@index');
