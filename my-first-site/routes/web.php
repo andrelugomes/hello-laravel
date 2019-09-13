@@ -44,4 +44,29 @@ Route::get('/about', function () {
 
 Route::get('/tasks', 'TaskController@index');
 
+
+/*
+Convention
+
+GET /projects (index)
+GET /projects/create (create) VIEW
+GET /projects/1 (show) VIEW
+GET /projects/1/edit  (edit) VIEW
+POST /projects (store)
+DELETE /projects/1 (destroy)
+PATCH /projects/1 (update)
+
+
 Route::get('/projects', 'ProjectController@index');
+Route::get('/projects/create', 'ProjectController@create');
+Route::get('/projects/{project}', 'ProjectController@show');
+Route::delete('/projects/{project}', 'ProjectController@destroy');
+Route::patch('/projects/{project}', 'ProjectController@update');
+Route::get('/projects/{project}', 'ProjectController@show');
+Route::get('/projects/{project}/edit', 'ProjectController@edit');
+Route::post('/projects', 'ProjectController@store');
+ */
+
+Route::resource('protects', 'ProjectController');
+
+
