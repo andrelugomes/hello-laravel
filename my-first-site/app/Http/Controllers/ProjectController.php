@@ -27,12 +27,72 @@ class ProjectController extends Controller
     public function store() //  \App\Http\Middleware\VerifyCsrfToken::class, Middleeware Kernel.php
     {
         //return request()->all();
-        $title = request("title");
-        $description = \request("description");
 
-        $project = new Project($title, $description);
+        /*$project = new Project();
+        $project->title = request("title");
+        $project->description = request("description");
+
+        $project->save();*/
+
+        /*Project::create([ // MassAssignmentException
+            'title' => request("title"),
+            'description' => request("description")
+        ]);*/
+
+        $attributes = request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => 'required'
+        ]);
+
+        //Project::create(request(['title', 'description']));
+        Project::create($attributes);
+
+        return redirect('/projects');
+    }
+
+    public function edit($id)
+    {
+        $project = Project::findOrFail($id); // default 404 page if fail
+        return view('projects.edit', compact('project'));
+    }
+
+    /*public function show($id)
+    {
+        $project = Project::findOrFail($id);
+
+        return $project; //json
+
+
+        return view('projects.show', compact('project'));
+    }*/
+
+    public function show(Project $project) //Route model binding with wildcard $id
+    {
+        return view('projects.show', compact('project'));
+    }
+
+    /*public function update($id)
+    {
+        //dd(request()->all());
+        $project = Project::findOrFail($id);
+        $project->title = request("title");
+        $project->description = request("description");
 
         $project->save();
-        return ;
+
+        return redirect('/projects');
+    }*/
+
+    public function update(Project $project)
+    {
+       $project->update(request(['title', 'description'])); //fillable attention
+
+        return redirect('/projects');
+    }
+
+    public function destroy($id)
+    {
+        Project::findOrFail($id)->delete();
+        return redirect('/projects');
     }
 }

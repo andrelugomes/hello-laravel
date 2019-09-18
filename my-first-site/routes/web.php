@@ -67,6 +67,6 @@ Route::get('/projects/{project}/edit', 'ProjectController@edit');
 Route::post('/projects', 'ProjectController@store');
  */
 
-Route::resource('protects', 'ProjectController');
+Route::resource('projects', 'ProjectController');
 
 
