@@ -44,6 +44,8 @@ Route::get('/about', function () {
 
 Route::get('/tasks', 'TaskController@index');
 
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+
 
 /*
 Convention
