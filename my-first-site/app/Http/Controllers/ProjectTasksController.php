@@ -15,11 +15,15 @@ class ProjectTasksController extends Controller
 
         //$task->complete(request()->has('completed'));
 
-        if(request()->has('completed')){
+        /*if(request()->has('completed')){
             $task->complete();
         }else {
             $task->incomplete();
-        }
+        }*/
+
+        $method = request()->has('completed') ? 'complete' : 'incomplete';
+
+        $task->$method();
 
         return back();
     }
