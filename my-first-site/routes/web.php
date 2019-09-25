@@ -46,6 +46,8 @@ Route::get('/tasks', 'TaskController@index');
 
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+
 
 /*
 Convention

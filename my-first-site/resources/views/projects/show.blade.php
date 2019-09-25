@@ -37,4 +37,20 @@
         <a href="/projects/{{ $project->id }}/edit">Edit</a>
     </div>
 
+    <div>
+        <form method="POST" action="/projects/{{ $project->id }}/tasks">
+            @csrf
+
+            <label>
+                <input type="text" name="description" placeholder="New task" required>
+            </label>
+
+            <div>
+                <button type="submit">New task</button>
+            </div>
+        </form>
+
+        @include('errors')
+    </div>
+
 @endsection
