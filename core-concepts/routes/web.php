@@ -30,5 +30,5 @@ Route::get('/services', 'ServiceController@index');
 Route::get('/providers', 'ServiceProviderController@index');
 Route::get('/providers/repo', 'ServiceProviderController@repo');
 Route::get('/reflectionError', 'ServiceController@reflectionError');
-Route::get('/sample', 'AutoResolvingController@sample');
-Route::get('/bar', 'BarController@bar');
+Route::get('/sample', 'AutoResolvingController@sample')->middleware('log-warning'); //single
+Route::get('/bar', 'BarController@bar')->middleware('log'); //group
