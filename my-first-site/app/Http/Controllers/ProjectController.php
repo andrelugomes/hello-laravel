@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ProjectCreated;
 use App\Project;
+use Illuminate\Support\Facades\Mail;
 
 class ProjectController extends Controller
 {
@@ -67,7 +69,11 @@ class ProjectController extends Controller
         $attributes['owner_id'] = auth()->id();
 
         //Project::create(request(['title', 'description']));
-        Project::create($attributes);
+        $project = Project::create($attributes);
+
+        Mail::to($project->owner->email)->send(
+            new ProjectCreated($project)
+        );
 
         return redirect('/projects');
     }
@@ -127,7 +133,7 @@ class ProjectController extends Controller
         $this->authorize('update', $project);
         //see Routes middleware
 
-       $project->update(request(['title', 'description'])); //fillable attention
+        $project->update(request(['title', 'description'])); //fillable attention
 
         return redirect('/projects');
     }
