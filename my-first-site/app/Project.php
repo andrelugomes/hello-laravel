@@ -18,12 +18,17 @@ class Project extends Model
 
     ];
 
+    public function owner() //hasOne
+    {
+        return $this->belongsTo(User::class);
+    }
+
     /**
      * App\Project::first()->tasks; // Eloquent magic, calling like a attribute
      *
      * App\Project::first()->tasks->last();
      * */
-    public function tasks()
+    public function tasks() //HasMany
     {
         return $this->hasMany(Task::class);
     }

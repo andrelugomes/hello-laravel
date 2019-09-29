@@ -23,9 +23,13 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Gate $gate)
+    public function boot()
     {
         $this->registerPolicies();
+
+
+        //use Illuminate\Auth\Access\Gate;
+        //boot(Gate $gate)
 
         //if before() is true, skip all polices.
         //else follow the next policy $policies

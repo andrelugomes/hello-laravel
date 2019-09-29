@@ -26,13 +26,17 @@ class ProjectController extends Controller
 
         //$projects = Project::all();
 
-        $projects = Project::where('owner_id', auth()->id())->get();
+        //$projects = Project::where('owner_id', auth()->id())->get();
+        //$projects = auth()->user->projects();
 
         //return $projects;//json
 
         //return view('projects.index');
         //return view('projects.index', ['projects' => $projects]);
-        return view('projects.index', compact('projects')); //same as upS
+        //return view('projects.index', compact('projects')); //same as upS
+        return view('projects.index', [
+            'projects' => auth()->user()->projects
+        ]);
     }
 
     public function create()
@@ -96,12 +100,12 @@ class ProjectController extends Controller
         //abort_if(!$project->user()->owns($project), 403);//
         //abort_unless($project->user()->owns($project), 403);
 
-        //$this->authorize('view', $project); //ProjectPolicy binding AuthServiceProvider
 
         //abort_if(\Gate::denies('view', $project), 403); //laravel GATE helper
         //abort_unless(\Gate::allows('view', $project), 403); //laravel GATE helper
 
         //see Routes middleware //php artisan route:list
+        $this->authorize('view', $project); //ProjectPolicy binding AuthServiceProvider
 
         return view('projects.show', compact('project'));
     }
@@ -120,7 +124,8 @@ class ProjectController extends Controller
 
     public function update(Project $project)
     {
-        //$this->authorize('update', $project); //see Routes middleware
+        $this->authorize('update', $project);
+        //see Routes middleware
 
        $project->update(request(['title', 'description'])); //fillable attention
 
@@ -135,7 +140,8 @@ class ProjectController extends Controller
 
     public function destroy(Project $project)
     {
-        //$this->authorize('destroy', $project); //see Routes middleware
+        $this->authorize('destroy', $project);
+        //see Routes middleware
 
         $project->delete();
 

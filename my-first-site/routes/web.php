@@ -74,7 +74,8 @@ Route::get('/projects/{project}/edit', 'ProjectController@edit');
 Route::post('/projects', 'ProjectController@store');
  */
 
-Route::resource('projects', 'ProjectController')->middleware('can:view,projects');
+//Route::resource('projects', 'ProjectController')->middleware('can:view,projects');
+Route::resource('projects', 'ProjectController');
 
 
 
