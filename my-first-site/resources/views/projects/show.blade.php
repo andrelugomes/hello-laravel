@@ -6,6 +6,10 @@
 
     <h1> {{ $project->title }}</h1>
 
+    @can('view', $project)
+        <a href="">Update</a>
+    @endcan
+
     <div class="content">
         {{ $project->description }}
     </div>

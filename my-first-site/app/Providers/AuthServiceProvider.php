@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
+
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -14,6 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Project' => 'App\Policies\ProjectPolicy',
     ];
 
     /**
@@ -21,10 +23,15 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Gate $gate)
     {
         $this->registerPolicies();
 
-        //
+        //if before() is true, skip all polices.
+        //else follow the next policy $policies
+
+        /*$gate->before(function ($user)) {
+            // Is $user an ADMIN? Skip policy
+        });*/
     }
 }

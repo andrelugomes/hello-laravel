@@ -9,7 +9,8 @@ class Project extends Model
     //Protection against MassAssignment Attack
     protected $fillable = [ //witch fields are ok to Mass Assign
         'title',
-        'description'
+        'description',
+        'owner_id'
     ];
 
     //fields that NOT be mass assigned

@@ -74,6 +74,10 @@ Route::get('/projects/{project}/edit', 'ProjectController@edit');
 Route::post('/projects', 'ProjectController@store');
  */
 
-Route::resource('projects', 'ProjectController');
+Route::resource('projects', 'ProjectController')->middleware('can:view,projects');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

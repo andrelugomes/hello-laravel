@@ -6,11 +6,27 @@ use App\Project;
 
 class ProjectController extends Controller
 {
+
+    /**
+     * ProjectController constructor.
+     */
+    public function __construct()
+    {
+        // some actions
+        //$this->middleware('auth')->only(['index', 'create', 'store', 'update', 'destroy', 'show', 'edit']);
+        //except
+        //$this->middleware('auth')->except(['index']);
+        $this->middleware('auth'); // all actions
+
+    }
+
     public function index()
     {
         //$projects = \App\Projects::all();
 
-        $projects = Project::all();
+        //$projects = Project::all();
+
+        $projects = Project::where('owner_id', auth()->id())->get();
 
         //return $projects;//json
 
@@ -44,6 +60,8 @@ class ProjectController extends Controller
             'description' => 'required'
         ]);
 
+        $attributes['owner_id'] = auth()->id();
+
         //Project::create(request(['title', 'description']));
         Project::create($attributes);
 
@@ -68,6 +86,23 @@ class ProjectController extends Controller
 
     public function show(Project $project) //Route model binding with wildcard $id
     {
+        /*if ($project->owner_id !== auth()->id()) {
+            abort(403);
+        }*/
+        /*if(\Gate::denies('view', $project)){
+            abort(403);
+        }*/
+        //abort_if($project->owner_id !== auth()->id(), 403); //laravel helper
+        //abort_if(!$project->user()->owns($project), 403);//
+        //abort_unless($project->user()->owns($project), 403);
+
+        //$this->authorize('view', $project); //ProjectPolicy binding AuthServiceProvider
+
+        //abort_if(\Gate::denies('view', $project), 403); //laravel GATE helper
+        //abort_unless(\Gate::allows('view', $project), 403); //laravel GATE helper
+
+        //see Routes middleware //php artisan route:list
+
         return view('projects.show', compact('project'));
     }
 
@@ -85,14 +120,25 @@ class ProjectController extends Controller
 
     public function update(Project $project)
     {
+        //$this->authorize('update', $project); //see Routes middleware
+
        $project->update(request(['title', 'description'])); //fillable attention
 
         return redirect('/projects');
     }
 
-    public function destroy($id)
+    /*public function destroy($id)
     {
         Project::findOrFail($id)->delete();
+        return redirect('/projects');
+    }*/
+
+    public function destroy(Project $project)
+    {
+        //$this->authorize('destroy', $project); //see Routes middleware
+
+        $project->delete();
+
         return redirect('/projects');
     }
 }
