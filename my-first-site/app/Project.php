@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Mail\ProjectCreated;
+use App\Events\ProjectCreated;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
 
@@ -19,8 +19,11 @@ class Project extends Model
     protected $guarded = [
 
     ];
+    protected $dispatchesEvents = [
+        'created' => ProjectCreated::class //Eloquent fire when create a new project
+    ];
 
-    protected static function boot()
+    /*protected static function boot() // using events
     {
         parent::boot();
 
@@ -29,7 +32,7 @@ class Project extends Model
                 new ProjectCreated($project)
             );
         });
-    }
+    }*/
 
 
     public function owner() //hasOne

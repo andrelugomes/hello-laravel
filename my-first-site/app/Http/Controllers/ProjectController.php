@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ProjectCreated;
+use App\Events\ProjectCreated;
 use App\Project;
 use Illuminate\Support\Facades\Mail;
 
@@ -76,6 +76,7 @@ class ProjectController extends Controller
             new ProjectCreated($project)
         );*/ // moved to Model - hooks/Events
 
+        //event(new ProjectCreated($project)); //trigged by Eloquent dispatchers
         return redirect('/projects');
     }
 
