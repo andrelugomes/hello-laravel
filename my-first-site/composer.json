@@ -21,7 +21,8 @@
         "laravel/telescope": "^2.1",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "rogervila/php-sonarqube-scanner": "^0.4.0"
     },
     "config": {
         "optimize-autoloader": true,

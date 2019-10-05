@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f0190d02bdfea91e6391473dd195e5e",
+    "content-hash": "3f86bbf14bf986ab378d3bb94a6c05fa",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3004,6 +3004,45 @@
             "time": "2018-10-04T07:22:24+00:00"
         },
         {
+            "name": "crysalead/dir",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/crysalead/dir.git",
+                "reference": "bb91ed1e8d2db50ac88a62b8ba7b2afdbf94af97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/crysalead/dir/zipball/bb91ed1e8d2db50ac88a62b8ba7b2afdbf94af97",
+                "reference": "bb91ed1e8d2db50ac88a62b8ba7b2afdbf94af97",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "kahlan/kahlan": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lead\\Dir\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Recursive directory scanner to locate directories and/or files in a file system",
+            "keywords": [
+                "Directory Scanner",
+                "directory",
+                "file",
+                "file system"
+            ],
+            "time": "2016-10-15T10:16:17+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.2.0",
             "source": {
@@ -3441,6 +3480,89 @@
                 "object graph"
             ],
             "time": "2019-04-07T13:18:21+00:00"
+        },
+        {
+            "name": "norwichtech/file-wrapper",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/norwichtech/file-wrapper.git",
+                "reference": "2ec61d03ee0bbf0151e9182c0dd43ff576e49824"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/norwichtech/file-wrapper/zipball/2ec61d03ee0bbf0151e9182c0dd43ff576e49824",
+                "reference": "2ec61d03ee0bbf0151e9182c0dd43ff576e49824",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NorwichTech\\FileWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Harvey",
+                    "email": "danieljamesharvey@gmail.com"
+                }
+            ],
+            "description": "A simple file system function wrapper that can be easily mocked or stubbed for testing",
+            "keywords": [
+                "file",
+                "testing",
+                "wrapper"
+            ],
+            "time": "2017-09-27T10:31:37+00:00"
+        },
+        {
+            "name": "norwichtech/php-git-branch",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/norwichtech/php-git-branch.git",
+                "reference": "e018ef69e2b2a50d1e2400c43cf67541c8fb58f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/norwichtech/php-git-branch/zipball/e018ef69e2b2a50d1e2400c43cf67541c8fb58f5",
+                "reference": "e018ef69e2b2a50d1e2400c43cf67541c8fb58f5",
+                "shasum": ""
+            },
+            "require": {
+                "norwichtech/file-wrapper": ">=2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NorwichTech\\PHPGitBranch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Harvey",
+                    "email": "danieljamesharvey@gmail.com"
+                }
+            ],
+            "description": "Library for working out which git branch you are on in PHP",
+            "time": "2017-09-27T10:52:23+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -4160,6 +4282,55 @@
             "time": "2019-07-15T06:24:08+00:00"
         },
         {
+            "name": "rogervila/php-sonarqube-scanner",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rogervila/php-sonarqube-scanner.git",
+                "reference": "0f5ff952f0f2540e0086ba5fbd5d17861f7d2372"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rogervila/php-sonarqube-scanner/zipball/0f5ff952f0f2540e0086ba5fbd5d17861f7d2372",
+                "reference": "0f5ff952f0f2540e0086ba5fbd5d17861f7d2372",
+                "shasum": ""
+            },
+            "require": {
+                "crysalead/dir": "^2.0",
+                "ext-zip": "*",
+                "norwichtech/php-git-branch": "^1.1",
+                "tivie/php-os-detector": "^1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0 || ^8.0"
+            },
+            "bin": [
+                "sonar-scanner"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sonar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roger Vilà",
+                    "email": "rogervila@me.com"
+                }
+            ],
+            "description": "Run SonarQube Scanner with composer",
+            "keywords": [
+                "sonar scanner php",
+                "sonarqube scanner php"
+            ],
+            "time": "2019-09-19T12:10:28+00:00"
+        },
+        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.1",
             "source": {
@@ -4764,6 +4935,54 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-06-13T22:48:21+00:00"
+        },
+        {
+            "name": "tivie/php-os-detector",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tivie/php-os-detector.git",
+                "reference": "9461dcd85c00e03842264f2fc8ccdc8d46867321"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tivie/php-os-detector/zipball/9461dcd85c00e03842264f2fc8ccdc8d46867321",
+                "reference": "9461dcd85c00e03842264f2fc8ccdc8d46867321",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tivie\\OS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "APACHE 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Estevão Soares dos Santos",
+                    "email": "estevao@soares-dos-santos.com"
+                }
+            ],
+            "description": "A small utility library that detects the OS the server is running on",
+            "homepage": "http://tivie.github.com/php-os-detector/",
+            "keywords": [
+                "detection",
+                "detector",
+                "identification",
+                "operating system",
+                "os",
+                "os detection"
+            ],
+            "time": "2017-10-21T03:33:59+00:00"
         },
         {
             "name": "webmozart/assert",
