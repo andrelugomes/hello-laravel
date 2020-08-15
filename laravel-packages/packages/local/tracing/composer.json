@@ -1,0 +1,22 @@
+{
+    "name": "local/tracing",
+	"description": "Trace ID Adapter",
+	"keywords": [
+        "TraceID",
+		"laravel"
+	],
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "André Luis Gomes",
+			"email": "andrelugomes@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": "^7.2"
+	},
+	"require-dev": {
+	}
+}
