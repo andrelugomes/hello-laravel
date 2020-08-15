@@ -1,0 +1,34 @@
+{
+    "name": "auto/tracing",
+	"description": "Trace ID Auto discovered",
+	"keywords": [
+        "TraceID",
+		"laravel"
+	],
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "André Luis Gomes",
+			"email": "andrelugomes@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": "^7.2"
+	},
+	"require-dev": {
+	},
+    "autoload": {
+        "psr-4": {
+            "Auto\\Tracing\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Auto\\Tracing\\TraceServiceProvider"
+            ]
+        }
+    }
+}

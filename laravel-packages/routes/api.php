@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/trace', 'TraceController@index')->name('trace.get');
+Route::get('/auto-trace', 'AutoTraceController@index')->name('trace.get');

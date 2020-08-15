@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0c0458cd7bf0aa562d0e4f09f6d9d59",
+    "content-hash": "3c5aa429f5d9834d28b7fcbac68a4865",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,45 @@
                 "stack"
             ],
             "time": "2020-05-31T07:17:05+00:00"
+        },
+        {
+            "name": "auto/tracing",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/auto/tracing",
+                "reference": "989b55f70c5078a2aeb517f5da212a66720c8932"
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Auto\\Tracing\\TraceServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Auto\\Tracing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Luis Gomes",
+                    "email": "andrelugomes@gmail.com"
+                }
+            ],
+            "description": "Trace ID Auto discovered",
+            "keywords": [
+                "TraceID",
+                "laravel"
+            ]
         },
         {
             "name": "brick/math",
@@ -5969,7 +6008,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "auto/tracing": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
