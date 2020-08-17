@@ -1,0 +1,30 @@
+{
+    "name": "andregomes/my-first-package",
+    "description": "My first awesome library using PHP and Composer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Luis Gomes",
+            "email": "andre.gomes@arquivei.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "External\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "External\\TraceGeneratorServiceProvider"
+            ]
+        }
+    }
+}

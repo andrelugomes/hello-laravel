@@ -4,8 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c5aa429f5d9834d28b7fcbac68a4865",
+    "content-hash": "fbbcb777c22c8f1846a0c142b97ee919",
     "packages": [
+        {
+            "name": "andregomes/my-first-package",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../my-first-package",
+                "reference": "531245a923d9f58acfb3a1a55b6710364eff71fc"
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "External\\TraceGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "External\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Luis Gomes",
+                    "email": "andre.gomes@arquivei.com.br"
+                }
+            ],
+            "description": "My first awesome library using PHP and Composer"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.1",
@@ -6009,6 +6044,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "andregomes/my-first-package": 20,
         "auto/tracing": 20
     },
     "prefer-stable": true,
