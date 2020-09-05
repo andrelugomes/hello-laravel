@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Andrelugomes\Calculate\Facades\Calculate;
+use App\Calculations;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Cache;
 
@@ -16,14 +17,13 @@ class UsingFacadeFromPackageController extends Controller
     {
         Cache::get(123); //Cache facade
 
-        Calculate::add(20);
-        $result = Calculate::subtract(10);
+        $calculations = new Calculations();
 
         return new JsonResponse(
             [
                 'package' => [
                     'CalculateServiceProvider' => 'Calculate by Facade',
-                    'result' => $result->getResult()
+                    'result' => $calculations->doCalculations(30)
                 ],
             ],
             200
