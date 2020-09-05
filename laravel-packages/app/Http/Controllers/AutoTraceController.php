@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use Auto\Tracing\TraceId\AutoTracing;
 use Illuminate\Http\JsonResponse;
-use Local\Tracing\TraceId\Trace;
 
 class AutoTraceController extends Controller
 {

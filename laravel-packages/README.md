@@ -4,6 +4,12 @@ Laravel 7.x
 
 + https://laravel.com/docs/7.x/packages
 
+### Running
+
+```shell script
+php artisan serve 
+```
+
 ## Manual Local package
 
 Manually added into composer
@@ -18,3 +24,27 @@ Autoconfig Local package
 
 + https://laravel.com/docs/7.x/packages#package-discovery
 + https://www.notion.so/andrelugomes/Package-Discovery-cdd7d2c4051440bb81bb3c62c8f882dc
+
+## External Package Discovery
+
+Same as Package Discovery, but out from the mais project
+
++ https://www.notion.so/andrelugomes/External-package-312c564390c64033a10ce8233d9d6a2e
+
+## External Facade
+
+Dicovering package then using Facades
+
+```json
+"andrelugomes/facade-package": "dev-master",
+...
+"repositories": {
+        ...
+        "facade": {
+            "type": "path",
+            "url": "../facade-package"
+        }
+    }
+```
+
+

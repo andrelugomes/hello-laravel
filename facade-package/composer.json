@@ -1,0 +1,55 @@
+{
+    "name": "andrelugomes/facade-package",
+    "description": "",
+    "keywords": [
+        "laravel",
+        "facade",
+        "package"
+    ],
+    "homepage": "https://github.com/andrelugomes/hello-laravel/facade-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "André Luis Gomes",
+            "email": "andrelugomes@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Andrelugomes\\Calculate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Andrelugomes\\Calculate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Andrelugomes\\Calculate\\CalculateServiceProvider"
+            ],
+            "aliases": {
+                "Calculate": "Andrelugomes\\Calculate\\Facades\\Calculate"
+            }
+        }
+    }
+}
