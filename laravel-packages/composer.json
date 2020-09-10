@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5",
         "andregomes/my-first-package": "dev-master",
+        "andregomes/config-package": "dev-master",
         "andrelugomes/facade-package": "dev-master",
         "auto/tracing": "dev-master",
         "fideloper/proxy": "^4.2",
@@ -76,6 +77,10 @@
         "facade": {
             "type": "path",
             "url": "../facade-package"
+        },
+        "config": {
+            "type": "path",
+            "url": "../config-package"
         }
     }
 }

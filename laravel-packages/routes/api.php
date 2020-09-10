@@ -22,3 +22,4 @@ Route::get('/trace', 'TraceController@index')->name('trace.get');
 Route::get('/auto-trace', 'AutoTraceController@index')->name('trace.get');
 Route::get('/external-trace', 'ExternalTraceController@index')->name('trace.get');
 Route::get('/facade-from-package', 'UsingFacadeFromPackageController@index')->name('facade.get');
+Route::get('/config', 'UsingConfigsFromPackageController@index')->name('config.get');
