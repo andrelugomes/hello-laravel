@@ -13,8 +13,12 @@ class ConfigurationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
+        /*$this->mergeConfigFrom(
             __DIR__.'/../config/config-file.php', 'alias'
+        );*/
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/config-file.php', 'config-file' //same name
         );
     }
     /**

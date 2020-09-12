@@ -15,7 +15,7 @@ class UsingConfigsFromPackageController extends Controller
      */
     public function index(): JsonResponse
     {
-        $alias = config('alias');
+        //$alias = config('alias');
         $config = config('config-file');
 
         return new JsonResponse(
@@ -27,7 +27,7 @@ class UsingConfigsFromPackageController extends Controller
                         'config(\'config-file.New\')' => config('config-file.New')
                     ],
                 ],
-                'original' => [
+                /*'original' => [
                     'config-from-alias' => $alias,
                     'alias.options' => [
                         'alias[\'Foo\']' => $alias['Foo'],
@@ -35,7 +35,7 @@ class UsingConfigsFromPackageController extends Controller
                         'config(\'alias.Default\')' => config('alias.Default'),
                         'config(\'alias.New\')' => config('alias.New') //null expected
                     ],
-                ],
+                ],*/
             ],
             200
         );
