@@ -11,6 +11,8 @@
 Trying to understand how it works 
 
 + Packages discovery 
-+ SelfInjected Service Providers
++ Self Injected Service Providers
 + Relation between Autoloads (main + package)
 + Extending Laravel
++ Facades
++ Configurations
