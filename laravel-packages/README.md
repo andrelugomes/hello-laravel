@@ -95,3 +95,26 @@ Create an alias for original config access
 }
 ```
 
+Merge using same name
+
+```json
+{
+	"override": {
+		"config-file": {
+			"Foo": "Bazzz",
+			"Default": "default-value",
+			"New": "new value merged"
+		},
+		"config-file.options": {
+			"config['Foo']": "Bazzz",
+			"config('config-file.New')": "new value merged"
+		}
+	}
+}
+```
+
+## Routes
+
+## Middleware
+
+## Commands
